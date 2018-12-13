@@ -1,12 +1,11 @@
 class Stack():
     
     def __init__(self, capacity):
-        try:
-            self.capacity = int(capacity)
-            self.items = [None] * capacity
-            self.num_items = 0
-        except:
-            raise ValueError('enter an integer value')
+        if type(capacity) != int:
+            raise ValueError('invalid capacity input')
+        self.capacity = capacity
+        self.items = [None] * capacity
+        self.num_items = 0
 
 
     def is_empty(self):
@@ -35,6 +34,6 @@ class Stack():
 
     def change_cap_to(self, capacity):
         if type(capacity) != int or capacity <= 0:
-            raise ValueError('invalid input for capacity')
+            raise ValueError('invalid capacity input')
         self.items += [None] * abs(self.capacity - capacity)
         self.capacity = capacity

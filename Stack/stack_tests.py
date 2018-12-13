@@ -7,7 +7,7 @@ class TestStack(unittest.TestCase):
         try:
             Stack(5.5)
         except ValueError as error:
-            self.assertEqual(str(error), 'enter an integer value')
+            self.assertEqual(str(error), 'invalid capacity input')
 
         s = Stack(5)
         try:
@@ -20,9 +20,9 @@ class TestStack(unittest.TestCase):
         except IndexError as error:
             self.assertEqual(str(error), 'stack is full')
         try:
-            s.change_cap_to('apple')
+            s.change_cap_to(-)
         except ValueError as error:
-            self.assertEqual(str(error), 'invalid input for capacity')
+            self.assertEqual(str(error), 'invalid capacity input')
 
     def test_functions(self):
         s = Stack(5)
