@@ -1,3 +1,8 @@
+'''
+Chase M. Peak
+-queue abstract data structure testing
+'''
+
 import unittest
 from queue import Queue
 
@@ -20,11 +25,11 @@ class TestQueue(unittest.TestCase):
         except IndexError as error:
             self.assertEqual(str(error), 'queue is full')
         try:
-            q.change_cap_to(-1)
+            q.resize(-1)
         except IndexError as error:
             self.assertEqual(str(error), 'invalid capacity input')
         try:
-            q.change_cap_to(6.6)
+            q.resize(6.6)
         except ValueError as error:
             self.assertEqual(str(error), 'invalid capacity input')
 
@@ -36,7 +41,7 @@ class TestQueue(unittest.TestCase):
         for i in range(5):
             q.enqueue(i)
         self.assertTrue(q.is_full())
-        q.change_cap_to(6)
+        q.resize(6)
 
         self.assertFalse(q.is_full())
         self.assertEqual(0, q.front)

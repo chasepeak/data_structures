@@ -1,3 +1,8 @@
+'''
+Chase M. Peak
+-stack abstract data type testing
+'''
+
 import unittest
 from stack import Stack
 
@@ -20,10 +25,13 @@ class TestStack(unittest.TestCase):
         except IndexError as error:
             self.assertEqual(str(error), 'stack is full')
         try:
-            s.change_cap_to(-)
+            s.resize(-1)
+        except IndexError as error:
+            self.assertEqual(str(error), 'invalid capacity input')
+        try:
+            s.resize(6.6)
         except ValueError as error:
             self.assertEqual(str(error), 'invalid capacity input')
-
     def test_functions(self):
         s = Stack(5)
         self.assertTrue(s.is_empty())
