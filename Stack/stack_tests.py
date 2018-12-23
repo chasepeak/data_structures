@@ -1,6 +1,6 @@
 '''
 Chase M. Peak
--stack abstract data type testing
+-stack abstract data structure testing
 '''
 
 import unittest
