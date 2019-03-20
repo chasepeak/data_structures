@@ -2,13 +2,16 @@
 Chase M. Peak
 -stack abstract data structure
 -array-based implementation
+
+-All operations are O(1)
+-Last In First Out
 '''
 
 class Stack():
     
     def __init__(self, capacity):
-        if type(capacity) != int:
-            raise ValueError('invalid capacity input')
+        if (type(capacity) != int):
+            raise ValueError("invalid capacity input")
         self.capacity = capacity
         self.items = [None] * capacity
         self.num_items = 0
@@ -45,9 +48,10 @@ class Stack():
 
 
     def resize(self, capacity):
+        if (type(capacity) != int):
+            raise ValueError("invalid capacity input")
         if self.num_items > capacity:
             raise IndexError('invalid capacity input')
-        elif type(capacity) != int:
-            raise ValueError('invalid capacity input')
+
         self.items += [None] * abs(self.capacity - capacity)
         self.capacity = capacity

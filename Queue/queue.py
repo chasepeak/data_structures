@@ -2,6 +2,10 @@
 Chase M. Peak
 -queue abstract data structure
 -array-based implementation
+
+-Dequeue @ head, Enqueue @ tail
+-All operations O(1)
+-First In First Out
 '''
 
 class Queue():

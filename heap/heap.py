@@ -2,6 +2,11 @@
 Chase M. Peak
 -ordered list abstract data structure
 -array-based implementation
+
+-heap sort is unstable O(n*logn) time complexity
+-bottom-up heap construction has O(n) time complexity
+-height of heap is log(n)//1
+-enqueue O(1) and dequeue O(logn)
 '''
 
 class MaxHeap:
@@ -24,6 +29,10 @@ class MaxHeap:
 
     def get_capacity(self):
         return self.capacity
+
+
+    def get_contents(self):
+        return self.items[1:self.num_items]
 
 
     def peek(self):

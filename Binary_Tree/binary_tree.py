@@ -1,6 +1,8 @@
 '''
 Chase M. Peak
 Binary tree abstract data structure
+
+-All operations are O(log n) average, while tree traversals are O(n)
 '''
 
 class TreeNode:
@@ -20,7 +22,8 @@ class TreeNode:
 
 
     def __eq__(self, other):
-        return self.data == other.data
+        return self.key == other.key
+
 
 class BinaryTree:
     def __init__(self):
@@ -29,10 +32,6 @@ class BinaryTree:
 
     def __repr__(self):
         return str(self.in_order_list())
-
-
-    def __getitem__(self, i):
-        return self.in_order_list()[i]
 
 
     def is_empty(self):
